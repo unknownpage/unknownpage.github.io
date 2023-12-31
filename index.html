@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신년맞이 페이지</title>
+    <title>편지 모양 토글</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -36,23 +36,42 @@
             bottom: 0;
             width: 100%;
         }
+
+        .letter-content {
+            display: none;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>신년맞이 페이지</h1>
+        <h1>편지 모양 토글</h1>
     </header>
 
     <section>
-        <h2>새해 복 많이 받으세요!</h2>
-        <p>새해에는 더 많은 행복과 성공이 가득하길 기원합니다.</p>
-        <p>올 한 해도 건강하고 행복한 시간 가득하시길 바랍니다.</p>
+        <button onclick="toggleLetter()">편지 열기/닫기</button>
+        <div class="letter-content" id="letterContent">
+            <h2>편지 내용</h2>
+            <p>이 곳에 편지의 내용이 들어갑니다.</p>
+            <!-- 내용을 추가하거나 수정하세요 -->
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 신년맞이 페이지</p>
+        <p>&copy; 2023 편지 모양 페이지</p>
     </footer>
+
+    <script>
+        function toggleLetter() {
+            var letterContent = document.getElementById("letterContent");
+            if (letterContent.style.display === "none") {
+                letterContent.style.display = "block";
+            } else {
+                letterContent.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
