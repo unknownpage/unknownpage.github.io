@@ -49,6 +49,9 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .letter-icon {
@@ -63,6 +66,9 @@
             }
         }
     </style>
+
+    <!-- Google Material Icons 스타일시트 추가 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -72,7 +78,7 @@
 
     <section>
         <button class="toggle-button" onclick="toggleLetter()">
-            <span class="letter-icon">&#9993;</span> 편지 열기/닫기
+            <i class="material-icons letter-icon">mail</i> 편지 열기/닫기
         </button>
         <div class="letter-content" id="letterContent">
             <h2>편지 내용</h2>
