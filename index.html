@@ -41,6 +41,27 @@
             display: none;
             margin-top: 20px;
         }
+
+        .toggle-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .letter-icon {
+            font-size: 24px;
+            margin-right: 5px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            section {
+                margin: 10px;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -50,7 +71,9 @@
     </header>
 
     <section>
-        <button onclick="toggleLetter()">편지 열기/닫기</button>
+        <button class="toggle-button" onclick="toggleLetter()">
+            <span class="letter-icon">&#9993;</span> 편지 열기/닫기
+        </button>
         <div class="letter-content" id="letterContent">
             <h2>편지 내용</h2>
             <p>이 곳에 편지의 내용이 들어갑니다.</p>
