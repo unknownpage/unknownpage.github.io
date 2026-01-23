@@ -1,0 +1,97 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 및 구조선 -->
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#e5e5e5" stroke-width="2"/>
+  <line x1="40" y1="170" x2="760" y2="170" stroke="#e5e5e5" stroke-width="2"/>
+  <line x1="280" y1="170" x2="280" y2="560" stroke="#e5e5e5" stroke-width="2"/>
+
+  <!-- 제목 -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0a0a0a" text-anchor="middle">
+    <tspan x="400" dy="0">통합 성과 및</tspan>
+    <tspan x="400" dy="25">리스크 대시보드</tspan>
+  </text>
+
+  <!-- 상단 섹션: 북극성 지표 (North Star) -->
+  <g id="north-star-section">
+    <rect x="297" y="90" width="206" height="65" rx="10" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="400" y="115" font-family="Arial, sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">
+      <tspan x="400" dy="0">전략적 목표:</tspan>
+      <tspan x="400" dy="20">북극성 지표</tspan>
+    </text>
+    <path d="M400,80 L405,90 L415,90 L407,97 L410,107 L400,100 L390,107 L393,97 L385,90 L395,90 Z" fill="#2563eb">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="2s" repeatCount="indefinite" additive="sum" pivot="400,95" />
+    </path>
+  </g>
+
+  <!-- 좌측 섹션: 부서별 성과 -->
+  <g id="department-metrics">
+    <text x="160" y="210" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0a0a0a" text-anchor="middle">부서별 성과 지표</text>
+    
+    <!-- 영업팀 -->
+    <circle cx="80" cy="260" r="8" fill="#059669" />
+    <text x="100" y="260" font-family="Arial, sans-serif" font-size="14" fill="#0a0a0a" text-anchor="start">영업팀: 정상</text>
+    
+    <!-- 개발팀 -->
+    <circle cx="80" cy="310" r="8" fill="#059669" />
+    <text x="100" y="310" font-family="Arial, sans-serif" font-size="14" fill="#0a0a0a" text-anchor="start">개발팀: 정상</text>
+    
+    <!-- 마케팅팀 -->
+    <circle cx="80" cy="360" r="8" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="100" y="360" font-family="Arial, sans-serif" font-size="14" fill="#0a0a0a" text-anchor="start">마케팅팀: 주의</text>
+  </g>
+
+  <!-- 중앙 섹션: 핵심 리스크 (Critical Risks) -->
+  <g id="critical-risks">
+    <rect x="300" y="180" width="440" height="360" rx="15" fill="#fef2f2" stroke="#ef4444" stroke-width="2" stroke-dasharray="8,4" />
+    <text x="520" y="220" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle">핵심 리스크 관리</text>
+    
+    <!-- 리스크 1: 지연된 과업 -->
+    <g transform="translate(340, 280)">
+      <rect x="0" y="0" width="182" height="60" rx="5" fill="#ffffff" stroke="#ef4444" stroke-width="2" />
+      <text x="91" y="30" font-family="Arial, sans-serif" font-size="14" fill="#ef4444" text-anchor="middle" font-weight="bold">
+        <tspan x="91" dy="-5">지연된 과업</tspan>
+        <tspan x="91" dy="20">(12건)</tspan>
+      </text>
+      <rect x="10" y="50" width="162" height="4" fill="#e5e5e5" />
+      <rect x="10" y="50" width="140" height="4" fill="#ef4444">
+        <animate attributeName="width" values="0;140" dur="2s" fill="freeze" />
+      </rect>
+    </g>
+
+    <!-- 리스크 2: 낮은 해결률 -->
+    <g transform="translate(340, 400)">
+      <rect x="0" y="0" width="182" height="60" rx="5" fill="#ffffff" stroke="#ef4444" stroke-width="2" />
+      <text x="91" y="30" font-family="Arial, sans-serif" font-size="14" fill="#ef4444" text-anchor="middle" font-weight="bold">
+        <tspan x="91" dy="-5">낮은 해결률</tspan>
+        <tspan x="91" dy="20">(45%)</tspan>
+      </text>
+      <rect x="10" y="50" width="162" height="4" fill="#e5e5e5" />
+      <rect x="10" y="50" width="73" height="4" fill="#ef4444">
+        <animate attributeName="width" values="0;73" dur="2s" fill="freeze" />
+      </rect>
+    </g>
+
+    <!-- 경고 아이콘 애니메이션 -->
+    <g transform="translate(600, 340)">
+      <path d="M0,-30 L30,20 L-30,20 Z" fill="none" stroke="#ef4444" stroke-width="4" />
+      <text y="10" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#ef4444" text-anchor="middle">!</text>
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="1s" repeatCount="indefinite" additive="sum" />
+    </g>
+
+    <!-- 스캔 라인 효과 -->
+    <rect x="310" y="190" width="420" height="2" fill="#ef4444" opacity="0.3">
+      <animate attributeName="y" values="190;530;190" dur="4s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- 하단 레이블: 고객 만족도 -->
+  <g transform="translate(600, 100)">
+    <rect x="0" y="0" width="144" height="50" rx="5" fill="#e5e5e5" />
+    <text x="72" y="25" font-family="Arial, sans-serif" font-size="12" fill="#737373" text-anchor="middle">
+      <tspan x="72" dy="-5">고객 만족도</tspan>
+      <tspan x="72" dy="15">95% 달성</tspan>
+    </text>
+  </g>
+</svg>

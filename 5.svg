@@ -1,0 +1,80 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 제목 -->
+  <text x="400" y="50" font-family="Pretendard, sans-serif" font-size="24" font-weight="bold" fill="#0a0a0a" text-anchor="middle">디지털 콕핏 데이터 학습 프로세스</text>
+
+  <!-- 배경 구조선 -->
+  <path d="M200 400 L400 320 L640 320" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- 1. 디지털 콕핏 섹션 -->
+  <g transform="translate(80, 150)">
+    <rect width="240" height="340" rx="10" fill="none" stroke="#737373" stroke-width="2" />
+    <rect x="10" y="10" width="220" height="180" rx="5" fill="#f8fafc" stroke="#e5e5e5" />
+    <text x="120" y="100" font-family="sans-serif" font-size="14" fill="#737373" text-anchor="middle">운행 데이터 디스플레이</text>
+    
+    <!-- 검토 버튼 -->
+    <g id="review_button_group">
+      <rect id="review_button" x="50" y="230" width="140" height="40" rx="5" fill="#7c3aed" fill-opacity="0.1" stroke="#7c3aed" stroke-width="2" />
+      <text x="120" y="250" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7c3aed" text-anchor="middle" dominant-baseline="middle">검토 (Review)</text>
+      <animate id="btn_click" attributeName="fill-opacity" values="0.1;0.4;0.1" dur="0.3s" begin="cursor_move.end" />
+    </g>
+  </g>
+
+  <!-- 2. AI 분석 엔진 (중앙) -->
+  <g transform="translate(400, 320)">
+    <circle r="50" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4 2">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite" />
+    </circle>
+    <circle id="brain_core" r="35" fill="#7c3aed" fill-opacity="0.1" stroke="#7c3aed" stroke-width="2" />
+    <text y="0" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7c3aed" text-anchor="middle" dominant-baseline="middle">
+      <tspan x="0" dy="-0.6em">AI 분석</tspan>
+      <tspan x="0" dy="1.2em">엔진</tspan>
+    </text>
+    <!-- 프로세싱 효과 -->
+    <circle r="35" fill="none" stroke="#7c3aed" stroke-width="3" opacity="0">
+      <animate id="brain_pulse" attributeName="opacity" values="0;1;0" dur="1s" begin="data_to_brain.end" />
+      <animate attributeName="r" values="35;55" dur="1s" begin="data_to_brain.end" />
+    </circle>
+  </g>
+
+  <!-- 3. 정교한 예측 결과 (우측) -->
+  <g transform="translate(560, 245)">
+    <rect width="160" height="150" rx="10" fill="none" stroke="#737373" stroke-width="2" />
+    <text x="80" y="-20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0a0a0a" text-anchor="middle">정교한 예측 결과</text>
+    
+    <!-- 그래프 축 -->
+    <line x1="20" y1="120" x2="140" y2="120" stroke="#e5e5e5" stroke-width="2" />
+    <line x1="20" y1="120" x2="20" y2="30" stroke="#e5e5e5" stroke-width="2" />
+    
+    <!-- 예측 그래프 선 -->
+    <path id="prediction_path" d="M20 100 Q 50 80, 80 90 T 140 40" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="200" stroke-dashoffset="200">
+      <animate id="chart_grow" attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" begin="data_to_pred.end" fill="freeze" />
+    </path>
+  </g>
+
+  <!-- 애니메이션 요소: 커서 -->
+  <g id="cursor">
+    <path d="M0,0 L0,20 L5,15 L10,25 L13,23 L8,13 L15,13 Z" fill="#0a0a0a" stroke="white" stroke-width="1" />
+    <animateMotion id="cursor_move" dur="1.5s" begin="0.5s" fill="freeze" path="M150,500 L200,400" />
+    <animate attributeName="opacity" values="1;0" dur="0.1s" begin="btn_click.end" fill="freeze" />
+  </g>
+
+  <!-- 애니메이션 요소: 데이터 포인트 1 (버튼 -> AI) -->
+  <circle r="6" fill="#7c3aed" opacity="0">
+    <animate id="data_to_brain" attributeName="opacity" values="0;1;1;0" dur="1s" begin="btn_click.end" fill="freeze" />
+    <animateMotion dur="1s" begin="btn_click.end" fill="freeze" path="M200,400 L400,320" />
+  </circle>
+
+  <!-- 애니메이션 요소: 데이터 포인트 2 (AI -> 결과) -->
+  <circle r="6" fill="#7c3aed" opacity="0">
+    <animate id="data_to_pred" attributeName="opacity" values="0;1;1;0" dur="1s" begin="brain_pulse.end" fill="freeze" />
+    <animateMotion dur="1s" begin="brain_pulse.end" fill="freeze" path="M400,320 L640,320" />
+  </circle>
+
+  <!-- 하단 설명 레이블 -->
+  <g transform="translate(400, 540)">
+    <text font-family="sans-serif" font-size="14" fill="#737373" text-anchor="middle">
+      <tspan x="0" dy="0">사용자의 검토 액션이 AI 모델의 학습 데이터로 전환되어</tspan>
+      <tspan x="0" dy="1.5em">실시간으로 예측 정확도를 향상시킵니다.</tspan>
+    </text>
+  </g>
+</svg>

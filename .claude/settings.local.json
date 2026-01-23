@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(start \"\" \"c:\\\\Users\\\\User\\\\Downloads\\\\dp\\\\index.html\")"
+    ]
+  }
+}

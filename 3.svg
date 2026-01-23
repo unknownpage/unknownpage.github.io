@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 및 구조선 -->
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#e5e5e5" stroke-width="1" />
+  
+  <!-- 제목 -->
+  <text x="400" y="50" text-anchor="middle" font-size="24" font-weight="bold" fill="#0a0a0a" font-family="sans-serif">모닝 인사이트 봇: 일일 알림 서비스</text>
+
+  <!-- 로봇 아이콘 (Morning Insight Bot) -->
+  <g transform="translate(400, 160)">
+    <!-- 안테나 -->
+    <line x1="0" y1="-50" x2="0" y2="-30" stroke="#0a0a0a" stroke-width="3" />
+    <circle cx="0" y="-55" r="5" fill="#2563eb">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <!-- 머리 -->
+    <rect x="-30" y="-30" width="60" height="45" rx="10" fill="white" stroke="#0a0a0a" stroke-width="3" />
+    <circle cx="-12" y="-10" r="4" fill="#2563eb" />
+    <circle cx="12" y="-10" r="4" fill="#2563eb" />
+    <path d="M -10 5 Q 0 12 10 5" fill="none" stroke="#0a0a0a" stroke-width="2" />
+    <!-- 몸체 -->
+    <rect x="-40" y="15" width="80" height="60" rx="5" fill="white" stroke="#0a0a0a" stroke-width="3" />
+    <rect x="-25" y="25" width="50" height="30" rx="2" fill="#f8fafc" stroke="#e5e5e5" stroke-width="1" />
+    <line x1="-20" y1="35" x2="20" y2="35" stroke="#2563eb" stroke-width="2" />
+    <line x1="-20" y1="45" x2="5" y2="45" stroke="#737373" stroke-width="2" />
+  </g>
+
+  <!-- 직원 아바타들 -->
+  <!-- 직원 1 -->
+  <g transform="translate(150, 500)">
+    <circle cx="0" y="0" r="30" fill="#e5e5e5" stroke="#737373" stroke-width="2" />
+    <path d="M -20 25 Q 0 10 20 25" fill="none" stroke="#737373" stroke-width="2" />
+    <text y="50" text-anchor="middle" font-size="14" fill="#737373">영업팀</text>
+  </g>
+  <!-- 직원 2 -->
+  <g transform="translate(400, 500)">
+    <circle cx="0" y="0" r="30" fill="#e5e5e5" stroke="#737373" stroke-width="2" />
+    <path d="M -20 25 Q 0 10 20 25" fill="none" stroke="#737373" stroke-width="2" />
+    <text y="50" text-anchor="middle" font-size="14" fill="#737373">기획팀</text>
+  </g>
+  <!-- 직원 3 -->
+  <g transform="translate(650, 500)">
+    <circle cx="0" y="0" r="30" fill="#e5e5e5" stroke="#737373" stroke-width="2" />
+    <path d="M -20 25 Q 0 10 20 25" fill="none" stroke="#737373" stroke-width="2" />
+    <text y="50" text-anchor="middle" font-size="14" fill="#737373">개발팀</text>
+  </g>
+
+  <!-- 메시지 팝업 애니메이션 -->
+  <!-- 1. CEO의 한마디 -->
+  <g opacity="0">
+    <rect x="-75" y="-25" width="150" height="50" rx="10" fill="white" stroke="#2563eb" stroke-width="2" />
+    <text y="0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="#2563eb">CEO의 한마디</text>
+    <animateMotion path="M 400 220 L 150 440" dur="3s" begin="0s; msg3.end+1s" id="msg1" fill="freeze" />
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="0s; msg3.end+1s" fill="freeze" />
+  </g>
+
+  <!-- 2. 업계 뉴스 요약 -->
+  <g opacity="0">
+    <rect x="-75" y="-25" width="150" height="50" rx="10" fill="white" stroke="#2563eb" stroke-width="2" />
+    <text y="0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="#2563eb">업계 뉴스 요약</text>
+    <animateMotion path="M 400 220 L 400 440" dur="3s" begin="msg1.begin+1s" id="msg2" fill="freeze" />
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="msg1.begin+1s" fill="freeze" />
+  </g>
+
+  <!-- 3. 팀 성공 사례 -->
+  <g opacity="0">
+    <rect x="-75" y="-25" width="150" height="50" rx="10" fill="white" stroke="#2563eb" stroke-width="2" />
+    <text y="0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="#2563eb">팀 성공 사례</text>
+    <animateMotion path="M 400 220 L 650 440" dur="3s" begin="msg2.begin+1s" id="msg3" fill="freeze" />
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="msg2.begin+1s" fill="freeze" />
+  </g>
+
+  <!-- 설명 레이블 -->
+  <g transform="translate(400, 320)">
+    <text x="0" y="0" text-anchor="middle" font-size="16" fill="#737373" font-style="italic">매일 아침, 핵심 인사이트 자동 배달</text>
+  </g>
+</svg>
