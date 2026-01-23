@@ -12,9 +12,9 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
             overflow: hidden;
-            background: #f5f5f7;
+            background: #e5e8eb;
         }
 
         /* Main container */
@@ -22,7 +22,7 @@
             width: 100vw;
             height: 100vh;
             position: relative;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f0f5 100%);
+            background: #e5e8eb;
         }
 
         /* Background image area */
@@ -31,10 +31,11 @@
             height: 65vh;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(to bottom, #e8f0fe 0%, #d2e3fc 100%);
+            background: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-bottom: 1px solid #f2f4f6;
         }
 
         #background img, #background svg {
@@ -54,18 +55,19 @@
 
         .svg-title {
             position: absolute;
-            top: 20px;
+            top: 28px;
             left: 50%;
             transform: translateX(-50%);
-            color: #1a73e8;
+            color: #191f28;
             font-size: 24px;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             z-index: 10;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 12px 30px;
-            border-radius: 24px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            background: #ffffff;
+            padding: 12px 32px;
+            border-radius: 12px;
+            border: 1px solid #f2f4f6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            letter-spacing: -0.6px;
         }
 
         /* Dialogue box area */
@@ -74,12 +76,11 @@
             height: 35vh;
             position: absolute;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.98);
-            border-top: 2px solid #e0e0e0;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+            background: #e5e8eb;
+            border-top: 1px solid #d1d6db;
             display: flex;
             align-items: flex-start;
-            padding: 20px 40px;
+            padding: 28px 50px;
             overflow-y: auto;
         }
 
@@ -89,7 +90,7 @@
             bottom: 35vh;
             width: 180px;
             height: 180px;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             opacity: 0;
             transform: translateY(30px) scale(0.95);
         }
@@ -105,8 +106,8 @@
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #ffffff;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
-                        0 0 0 2px #1a73e8;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12),
+                        0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .character-portrait.left {
@@ -122,35 +123,38 @@
             width: 100%;
             max-width: 900px;
             margin: 0 auto;
-            background: transparent;
+            background: #ffffff;
             border-radius: 16px;
-            padding: 0;
+            padding: 28px 32px;
             position: relative;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         }
 
         #speaker-name {
-            color: #1a73e8;
+            color: #191f28;
             font-size: 20px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
         }
 
         #speaker-role {
-            color: #5f6368;
+            color: #8b95a1;
             font-size: 13px;
-            font-style: italic;
+            font-style: normal;
             margin-bottom: 16px;
             font-weight: 500;
         }
 
         #dialogue-text {
-            color: #202124;
+            color: #4e5968;
             font-size: 16px;
-            line-height: 1.8;
+            line-height: 1.7;
             min-height: 60px;
-            max-height: 22vh;
+            max-height: 20vh;
             overflow-y: auto;
-            padding-right: 10px;
+            padding-right: 12px;
+            letter-spacing: -0.3px;
         }
 
         #dialogue-text::-webkit-scrollbar {
@@ -158,17 +162,16 @@
         }
 
         #dialogue-text::-webkit-scrollbar-track {
-            background: #f1f3f4;
-            border-radius: 3px;
+            background: transparent;
         }
 
         #dialogue-text::-webkit-scrollbar-thumb {
-            background: #dadce0;
+            background: #d1d6db;
             border-radius: 3px;
         }
 
         #dialogue-text::-webkit-scrollbar-thumb:hover {
-            background: #bdc1c6;
+            background: #b0b8c1;
         }
 
         #dialogue-text ul {
@@ -181,51 +184,49 @@
         }
 
         #dialogue-text strong {
-            color: #1a73e8;
+            color: #191f28;
             font-weight: 700;
         }
 
         /* Navigation controls */
         #controls {
             position: absolute;
-            bottom: 20px;
-            right: 40px;
+            bottom: 28px;
+            right: 50px;
             display: flex;
-            gap: 12px;
+            gap: 10px;
             z-index: 100;
         }
 
         .control-btn {
-            background: #1a73e8;
-            color: white;
+            background: #3182f6;
+            color: #ffffff;
             border: none;
-            padding: 11px 24px;
-            border-radius: 24px;
-            font-size: 14px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 15px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-                        0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(49, 130, 246, 0.2);
+            letter-spacing: -0.3px;
         }
 
         .control-btn:hover {
-            background: #1765cc;
+            background: #1b64da;
             transform: translateY(-1px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15),
-                        0 3px 6px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 4px 12px rgba(49, 130, 246, 0.3);
         }
 
         .control-btn:active {
             transform: translateY(0);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 6px rgba(49, 130, 246, 0.2);
         }
 
         .control-btn:disabled {
-            background: #dadce0;
-            color: #80868b;
+            background: #f2f4f6;
+            color: #b0b8c1;
             cursor: not-allowed;
-            opacity: 1;
             transform: none;
             box-shadow: none;
         }
@@ -233,63 +234,73 @@
         /* Progress indicator */
         #progress {
             position: absolute;
-            top: 20px;
-            right: 40px;
-            color: #5f6368;
-            font-size: 13px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 8px 18px;
-            border-radius: 20px;
+            top: 28px;
+            right: 50px;
+            color: #4e5968;
+            font-size: 14px;
+            background: #ffffff;
+            padding: 10px 18px;
+            border-radius: 12px;
             z-index: 100;
             font-weight: 600;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f2f4f6;
+            letter-spacing: -0.3px;
         }
 
         /* Click indicator */
         #click-indicator {
             position: absolute;
-            bottom: 80px;
-            right: 40px;
-            color: #5f6368;
+            bottom: 90px;
+            right: 50px;
+            color: #8b95a1;
             font-size: 13px;
-            animation: pulse 1.5s infinite;
-            opacity: 0.7;
+            animation: pulse 2s ease-in-out infinite;
             font-weight: 500;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+            0%, 100% {
+                opacity: 0.4;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-3px);
+            }
         }
 
         /* Auto-play toggle */
         #autoplay-toggle {
             position: absolute;
-            top: 20px;
-            left: 40px;
-            background: rgba(255, 255, 255, 0.95);
-            color: #5f6368;
-            border: 2px solid #dadce0;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 13px;
+            top: 28px;
+            left: 50px;
+            background: #ffffff;
+            color: #4e5968;
+            border: 1px solid #f2f4f6;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 14px;
             cursor: pointer;
             z-index: 100;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
             font-weight: 600;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            letter-spacing: -0.3px;
         }
 
         #autoplay-toggle:hover {
-            background: #f8f9fa;
-            border-color: #1a73e8;
-            color: #1a73e8;
+            background: #f9fafb;
+            border-color: #e5e8eb;
+            color: #191f28;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         #autoplay-toggle.active {
-            background: #1a73e8;
-            border-color: #1a73e8;
-            color: white;
+            background: #3182f6;
+            border-color: #3182f6;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(49, 130, 246, 0.2);
         }
 
         /* Loading screen */
@@ -304,7 +315,7 @@
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            transition: opacity 0.5s;
+            transition: opacity 0.5s ease;
         }
 
         #loading.hidden {
@@ -313,9 +324,20 @@
         }
 
         .loader {
-            color: #1a73e8;
+            color: #3182f6;
             font-size: 18px;
             font-weight: 600;
+            animation: loaderPulse 1.2s ease infinite;
+            letter-spacing: -0.3px;
+        }
+
+        @keyframes loaderPulse {
+            0%, 100% {
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 1;
+            }
         }
 
         /* Mobile responsive */
@@ -326,51 +348,62 @@
 
             #dialogue-container {
                 height: 45vh;
-                padding: 15px 20px;
+                padding: 20px 25px;
             }
 
             .character-portrait {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
                 bottom: 45vh;
             }
 
             .character-portrait.left {
-                left: 15px;
+                left: 20px;
             }
 
             .character-portrait.right {
-                right: 15px;
+                right: 20px;
             }
 
             #speaker-name {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             #dialogue-text {
-                font-size: 15px;
+                font-size: 16px;
                 max-height: 28vh;
             }
 
             #controls {
-                bottom: 15px;
-                right: 20px;
-                gap: 8px;
+                bottom: 20px;
+                right: 25px;
+                gap: 10px;
             }
 
             .control-btn {
-                padding: 9px 16px;
-                font-size: 13px;
+                padding: 11px 20px;
+                font-size: 14px;
             }
 
             #progress, #autoplay-toggle {
-                font-size: 12px;
-                padding: 6px 14px;
+                font-size: 13px;
+                padding: 8px 18px;
+            }
+
+            #progress {
+                top: 25px;
+                right: 25px;
+            }
+
+            #autoplay-toggle {
+                top: 25px;
+                left: 25px;
             }
 
             .svg-title {
-                font-size: 18px;
-                padding: 10px 20px;
+                font-size: 20px;
+                padding: 12px 25px;
+                top: 25px;
             }
         }
     </style>
@@ -420,47 +453,47 @@
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "left",
-                image: "assets/characters/choi-yunseo.png",
-                text: "안녕하세요! 오늘 저희가 함께 살펴볼 내용은 중견 제조업체가 데이터와 AI를 도입하여 미래로 나아가는 아주 구체적인 '작전계획서'입니다. 정말 흥미롭지 않나요?<br><br>오늘 대화를 통해 청중 여러분께서는 다음 세 가지 핵심 포인트를 얻어 가실 수 있을 겁니다.<ul><li><strong>AI 도입을 위한 5단계 현실적 로드맵:</strong> 거창한 구호가 아닌, '데이터 표준화'부터 시작하는 실질적인 5단계 접근법을 이해합니다.</li><li><strong>변화의 핵심, 문화와 프로세스:</strong> 기술 이전에 직원들의 인식 변화와 업무 투명성을 확보하는 구체적인 방법론(예: 모닝 인사이트 봇, Jira 활용)을 배웁니다.</li><li><strong>AI 기반 의사결정 시스템 구축:</strong> 흩어진 데이터를 통합하고, 경영진의 의사결정 자체가 AI를 훈련시키는 데이터가 되는 '디지털 조종석'의 원리를 파악합니다.</li></ul>그럼 첫 번째 단계부터 신나게 파헤쳐 볼까요?"
+                image: "./choi-yunseo.png",
+                text: "안녕하세요! 오늘 저희가 함께 살펴볼 내용은 중견 제조업체가 데이터와 AI를 도입하여 미래로 나아가는 아주 구체적인 '작전계획서'입니다. 정말 흥미롭지 않나요?<br><br>오늘 대화를 통해 청중 여러분께서는 다음 세 가지 핵심 포인트를 얻어 가실 수 있을 겁니다.<ul><li><strong>AI 도입을 위한 5단계 현실적 로드맵:</strong> 거창한 구호가 아닌, '데이터 표준화'부터 시작하는 실질적인 5단계 접근법을 이해합니다.</li><li><strong>변화의 핵심, 문화와 프로세스:</strong> 기술 이전에 직원들의 인식 변화와 업무 투명성을 확보하는 구체적인 방법론(예: 모닝 인사이트, Jira 활용)을 배웁니다.</li><li><strong>AI 기반 의사결정 시스템 구축:</strong> 흩어진 데이터를 통합하고, 경영진의 의사결정 자체가 AI를 훈련시키는 데이터가 되는 '디지털 조종석'의 원리를 파악합니다.</li></ul>그럼 첫 번째 단계부터 신나게 파헤쳐 볼까요?"
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "right",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "네, 정말 기대됩니다! 이 계획서는 마치 성장 드라마 대본 같아요. 기준도 없고 소통도 안 되던 제조업체가 최신 무기를 장착하는 과정이잖아요."
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "left",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "맞습니다. 특히 저는 이 계획이 'AI 도입'이라는 구호에 그치지 않고, 가장 땅에 발붙인 문제, 즉 '데이터 표준화'부터 시작한다는 점이 인상 깊었어요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "맞아요. 이 5단계가 지라를 통한 업무 투명화부터 AI 의사결정 지원까지 촘촘하게 연결되어 있죠. 기술 전문가가 아니더라도 당장 시작할 수 있는 현실적인 로드맵이라는 게 핵심입니다."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "그럼 첫 번째 단계부터 들어가 보죠.<br><br><strong>1단계: 데이터 및 규칙의 표준화</strong><br><br>입니다. 자료에 나온 비유가 정말 기가 막혔어요."
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "right",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "AI를 위한 공통 언어를 만드는 건, 건물을 짓기 전에 <strong>벽돌 규격을 맞추는 것</strong>과 같다는 비유 말이죠?"
             },
             {
                 type: "svg",
-                file: "1.svg",
+                file: "./1.svg",
                 title: "1단계: 데이터 및 규칙의 표준화",
                 caption: "벽돌 규격을 맞추는 것처럼, 데이터 표준화는 AI의 첫 번째 기초입니다."
             },
@@ -468,89 +501,89 @@
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "left",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "(끄덕이며) 네, 그 비유 정말 좋았어요. 모두가 제각각 다른 크기의 벽돌을 가져오면 제대로 된 건물을 올릴 수 없으니까요. 이 규격을 맞추는 첫 단추가 바로 코드 사전(코드 딕셔너리)을 만드는 겁니다."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "right",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "이 코드 규칙이 굉장히 구체적이더라고요. 예를 들어 부서 코드가 DMN01이라면, D는 부서, MN은 관리본부, 01은 1팀을 의미하는 거죠."
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "left",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "제품 코드 PEL24001도 마찬가지예요. 전장품 카테고리에서 24년에 개발된 첫 번째 제품이라는 정보가 코드 안에 다 담겨 있는 거죠. 코드만 봐도 정보가 다 보이네요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "설비 코드, LO 코드까지 이런 식으로 규칙을 세우니 정말 체계적이겠죠. 게다가 영문 대문자와 숫자만 쓰고 특수문자는 하이픈만 허용한다는 사소한 규칙 하나하나가 나중에 데이터 분석에 큰 차이를 만들 겁니다."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "(기침) 그런데 말입니다, 최 컨설턴트님. 규칙 만드는 건 좋은데, <strong>전 직원이 이걸 다 지키게 하는 게</strong> 진짜 어렵지 않겠어요? '나는 원래 하던 대로 할래' 하는 저항은 어떻게 해결하라고 나와 있나요?"
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "right",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "아, 현실적인 질문이시네요! 자료에서는 거창한 시스템 도입부터 하라고 하지 않아요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "left",
-                image: "assets/characters/choi-yunseo.png",
-                text: "네, 일단 <strong>엑셀 파일 하나로 표준 용어 사전을 만들어서</strong> 모두가 볼 수 있게 공유하는 것부터 시작하라고 제안합니다. 그리고 가장 중요한 건 <strong>경영진의 강력한 의지 표명</strong>이에요."
+                image: "./choi-yunseo.png",
+                text: "네, 일단 <strong>표준 용어 사전을 만들어서</strong> 모두가 볼 수 있게 공유하는 것부터 시작하라고 제안합니다. 그리고 가장 중요한 건 <strong>경영진의 강력한 의지 표명</strong>이에요."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "right",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "강제성이 필요하다는 거군요. '오늘부터 이 코드 사전을 따르지 않는 데이터는 공식 데이터로 인정하지 않는다'고요?"
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "left",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "네, 초기는 불편해도 왜 필요한지 꾸준히 설득하고 교육해야 하고요. 또, 코드 생성 자체를 자동화해서 사람이 실수할 여지를 줄이는 것도 방법이 될 수 있답니다."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "정리하자면, 1단계 표준화의 핵심은 <strong>규칙 정립, 경영진의 강력한 강제성, 그리고 편의성 제공</strong> 세 가지를 같이 가져가야 한다는 겁니다."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "(끄덕이며) 좋습니다. 데이터 벽돌 규격은 맞췄으니, 이제 그 벽돌을 쌓을 땅을 다져야겠죠? 1단계의 또 다른 기둥은 무엇인가요?"
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "right",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "바로 <strong>서버 및 솔루션 관리 규정을 문서화</strong>하는 것입니다. 시스템이 복잡해지면 '어? 이 서버 담당자 누구지?' 하다가 서비스가 멈추는 일이 비일비재하거든요."
             },
             {
                 type: "svg",
-                file: "2.svg",
+                file: "./2.svg",
                 title: "서버 및 솔루션 관리 규정",
                 caption: "자산대장처럼 서버와 담당자를 체계적으로 관리합니다."
             },
@@ -558,109 +591,109 @@
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "left",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "그걸 막기 위한 안전장치군요. 어떤 서버에 어떤 프로그램이 깔려 있고, 담당자가 누구인지 <strong>자산대장처럼 기록</strong>해두는 거죠."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "right",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "일종의 이력관리네요. 그리고 '담당자 승인 없이는 절대 변경 금지' 원칙을 세우면 문제 발생 시 원인과 책임 소재가 명확해지니, AI 시대로 갈수록 기본기가 더 중요해진다는 말이 와닿습니다."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "left",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "네, 1단계에서 데이터 벽돌 규격과 서버 기반을 단단히 다졌습니다. 이제 2단계로 넘어가 볼까요?<br><br>1단계가 딱딱한 규칙이었다면, <strong>2단계는 직원들의 마음을 움직이는 단계</strong>입니다."
             },
             {
                 type: "svg",
-                file: "3.svg",
+                file: "./3.svg",
                 title: "2단계: 변화의 핵심 - 문화와 프로세스",
-                caption: "모닝 인사이트 봇으로 매일 아침 조직의 유대감을 높입니다."
+                caption: "모닝 인사이트으로 매일 아침 조직의 유대감을 높입니다."
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "right",
-                image: "assets/characters/park-jihun.png",
-                text: "기술적인 문제가 아니라 사람들의 인식을 바꾸기 위해 <strong>자동화 봇</strong>을 쓴다는 발상이 정말 독특했어요. 구체적으로 어떻게 작동하나요?"
+                image: "./park-jihun.png",
+                text: "기술적인 문제가 아니라 사람들의 인식을 바꾸기 위해 <strong>모닝 인사이트</strong>을 쓴다는 발상이 정말 독특했어요. 구체적으로 어떻게 작동하나요?"
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
-                text: "그게 바로 '모닝 인사이트'라는 자동화 봇인데요. 복잡한 기술은 아니고요, 매일 아침 8시 30분에 모든 직원 메신저나 인트라넷에 똑같은 메시지를 팝업으로 띄워주는 겁니다."
+                image: "./kim-minjun.png",
+                text: "그게 바로 '모닝 인사이트'인데요. 복잡한 기술은 아니고요, 매일 아침 모든 직원 PC에 똑같은 메시지를 팝업으로 띄워주는 겁니다."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "매일 아침이요? 그 메시지는 세 가지로 구성된다고 하죠?<br><br>첫째는 <strong>경영진의 한마디</strong>로 회사의 방향성을 상기시키고, 둘째는 오늘의 뉴스로 업계 소식을 세 줄 요약해서 알려주고요."
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "left",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "그리고 마지막 셋째가 가장 중요하다고 했는데, <strong>부서 현황 공유</strong>였죠? '어제 생산팀에서 5톤 달성 성공했습니다', '영업 2팀 수주 성공, 다 같이 축하해 주세요' 같은 긍정적인 소식을 전사적으로 알리는 거요."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "right",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "옆 부서가 뭘 하는지 몰라서 생기는 오해나 단절을 이런 작은 소통으로 해결하려는 시도군요. 매일 반복되면 엄청난 힘을 발휘하겠어요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "left",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "맞습니다. 직원들은 회사가 나아가는 방향을 매일 인지하고, 동료의 성공을 축하하면서 소속감과 유대감을 느끼게 되죠.<br><br>전 직원이 같은 정보를 보고 하루를 시작하게 만드는 것, 이게 바로 <strong>3단계 협업 문화의 영리한 준비운동</strong>인 셈입니다."
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "right",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "자, 이제 본격적인 게임 체인저가 등장하는 <strong>3단계: 업무 프로세스 투명화</strong>로 넘어가 보죠. 회의만 하고 실행이 안 되는 악순환을 끊는다는 문구가 정말 강렬했어요."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
-                text: "그 해결책이 바로 <strong>'오늘부터 모든 업무 기록은 지라(Jira)에만 남긴다'</strong>고 선포하는 거였죠. 정말 단호한 선언이에요."
+                image: "./kim-minjun.png",
+                text: "그 해결책이 바로 <strong>'오늘부터 모든 업무 기록은 업무 일보에 남긴다'</strong>고 선포하는 거였죠. 정말 단호한 선언이에요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
-                text: "네, 그 단호함이 없으면 변화는 불가능하니까요. 이 선언을 현실화하기 위해 'AI Transformation 2024' 같은 프로젝트를 만들고, <strong>2주 단위의 스프린트 주기</strong>로 업무를 관리하기 시작합니다."
+                image: "./choi-yunseo.png",
+                text: "네, 그 단호함이 없으면 변화는 불가능하니까요. 이 선언을 현실화하기 위해 'NP AX 2026' 같은 프로젝트를 만들고, <strong>2주 단위의 스프린트 주기</strong>로 업무를 관리하기 시작합니다."
             },
             {
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "(고개를 끄덕이며) 네. 그런데 이 모든 데이터가 각 부서 엑셀이나 ERP에 흩어져 있으면 결국 예전으로 돌아가는 거 아닐까요?<br><br>이 벽을 허무는 단계가 바로 <strong>4단계: 데이터 통합 및 AI 기반 의사결정</strong>이겠네요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "드디어 흩어진 구슬을 꿰어 보배로 만드는 단계죠! 그 무기가 바로 <strong>전사 대시보드</strong>입니다."
             },
             {
                 type: "svg",
-                file: "4.svg",
+                file: "./4.svg",
                 title: "4단계: 데이터 통합 및 AI 기반 의사결정",
                 caption: "전사 대시보드로 모든 데이터를 통합하고 AI가 의사결정을 지원합니다."
             },
@@ -668,19 +701,19 @@
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "그리고 드디어 여기서부터 <strong>진짜 AI가 등장</strong>하기 시작합니다! 단순히 데이터를 보여주는 걸 넘어, AI가 직접 업무를 조정하고 전략까지 제안한다니 정말 미래 영화 같았어요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "단순 요약을 넘어선 진짜 통찰력을 제공하기 시작하는 거군요! 이 모든 AI 기반 의사결정의 신경부가 바로 <strong>경영진 대시보드</strong>라고 하더군요.<br><br>자료에서는 이걸 단순 현황판이 아니라 비행기를 조종하는 <strong>디지털 조종석(Digital Cockpit)</strong>이라고 불렀습니다."
             },
             {
                 type: "svg",
-                file: "5.svg",
+                file: "./5.svg",
                 title: "5단계: 디지털 조종석 (Digital Cockpit)",
                 caption: "경영진 대시보드가 AI 학습 데이터 수집기가 되어 회사의 의사결정 DNA를 이식합니다."
             },
@@ -688,56 +721,42 @@
                 speaker: "김민준",
                 role: "제조업 혁신 전문가",
                 position: "left",
-                image: "assets/characters/kim-minjun.png",
+                image: "./kim-minjun.png",
                 text: "네, 이 디지털 조종석은 단순히 현황을 보고받는 도구가 아니라는 겁니다. 그 자체가 <strong>AI의 학습 데이터 수집기</strong>가 된다는 거죠!"
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "(놀라며) 잠깐만요! 경영진이 매일 대시보드를 보고 승인, 반려, 재검토 지시하는 <strong>모든 클릭과 댓글</strong>이 회사의 전략을 짜줄 AI를 훈련시키는 데이터가 된다는 말씀이시군요?"
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "left",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "이건 회사의 <strong>의사결정 DNA를 시스템에 그대로 이식</strong>하는 거네요?"
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "right",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "와... 엑셀 용어 하나 정리하는 작은 단계에서 시작했는데, 결국 회사의 집단지성이자 브레인이 될 AI를 키워내는 거대한 그림으로 연결되는군요!<br><br>핵심은 이 모든 것이 <strong>단계별로 차곡차곡 쌓아 올려야만 가능하다</strong>는 거겠죠."
-            },
-            {
-                speaker: "박지훈",
-                role: "데이터 분석가",
-                position: "left",
-                image: "assets/characters/park-jihun.png",
-                text: "네, 그래서 마지막 액션 플랜도 명확하죠.<br><br><strong>첫째</strong>, 경영진 이름으로 모든 업무 지시는 지라로 통한다고 선포하기.<br><strong>둘째</strong>, TF를 구성해서 당장 코드 사전 만들기 시작하기."
-            },
-            {
-                speaker: "김민준",
-                role: "제조업 혁신 전문가",
-                position: "right",
-                image: "assets/characters/kim-minjun.png",
-                text: "그리고 <strong>셋째</strong>, 완벽한 준비를 기다리지 말고 <strong>지금 바로 클라우드 버전 지라 계정부터 만들어서 프로젝트를 개설</strong>해보라는 거군요."
             },
             {
                 speaker: "최윤서",
                 role: "IT 전략 컨설턴트",
                 position: "left",
-                image: "assets/characters/choi-yunseo.png",
+                image: "./choi-yunseo.png",
                 text: "결국 화려한 4, 5단계의 AI는 지루하고 반복적일 수 있는 <strong>1, 2, 3단계의 데이터 규칙과 업무 프로세스라는 단단한 토대 위에서만 꽃을 피울 수 있다</strong>는 겁니다.<br><br>올바른 시스템과 습관을 먼저 만드는 것이 기술 도입보다 훨씬 더 중요하다는 말씀으로 들립니다. 이 여정은 100m 달리기가 아니라 마라톤이니까요."
             },
             {
                 speaker: "박지훈",
                 role: "데이터 분석가",
                 position: "right",
-                image: "assets/characters/park-jihun.png",
+                image: "./park-jihun.png",
                 text: "오늘 이 자료들을 파헤쳐 보니 정말 많은 영감을 얻게 되네요. 감사합니다!"
             }
         ];
